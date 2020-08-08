@@ -13,38 +13,44 @@
 <body>
     <div class="calculator">
         <form action="" name="form">
-            <input type="text" value="0" class="form-control main-bar" name="display">
+            <input type="text" value="" class="form-control main-bar" name="display" placeholder="0">
              <div class="button-area">
                  <div class="line">
-                     <input type="button" name="btn" value="7" class="btn btn-info">
-                     <input type="button" name="btn" value="8" class="btn btn-info">
-                     <input type="button" name="btn" value="9" class="btn btn-info">
-                     <input type="button" name="btn" value="+" class="btn btn-warning">
+                     <input type="button" name="btn" value="7" class="btn btn-info" onclick="calculate(this.value)">
+                     <input type="button" name="btn" value="8" class="btn btn-info" onclick="calculate(this.value)">
+                     <input type="button" name="btn" value="9" class="btn btn-info" onclick="calculate(this.value)">
+                     <input type="button" name="btn" value="+" class="btn btn-warning" onclick="calculate(this.value)">
                  </div>
                  <div class="line">
-                    <input type="button" name="btn" value="4" class="btn btn-info">
-                    <input type="button" name="btn" value="5" class="btn btn-info">
-                    <input type="button" name="btn" value="6" class="btn btn-info">
-                    <input type="button" name="btn" value="-" class="btn btn-warning">
+                    <input type="button" name="btn" value="4" class="btn btn-info" onclick="calculate(this.value)">
+                    <input type="button" name="btn" value="5" class="btn btn-info" onclick="calculate(this.value)">
+                    <input type="button" name="btn" value="6" class="btn btn-info" onclick="calculate(this.value)">
+                    <input type="button" name="btn" value="-" class="btn btn-warning" onclick="calculate(this.value)">
                 </div>
                 <div class="line">
-                    <input type="button" name="btn" value="1" class="btn btn-info">
-                    <input type="button" name="btn" value="2" class="btn btn-info">
-                    <input type="button" name="btn" value="3" class="btn btn-info">
-                    <input type="button" name="btn" value="*" class="btn btn-warning">
+                    <input type="button" name="btn" value="1" class="btn btn-info" onclick="calculate(this.value)">
+                    <input type="button" name="btn" value="2" class="btn btn-info" onclick="calculate(this.value)">
+                    <input type="button" name="btn" value="3" class="btn btn-info" onclick="calculate(this.value)">
+                    <input type="button" name="btn" value="*" class="btn btn-warning" onclick="calculate(this.value)">
                 </div>
                 <div class="line">
-                    <input type="button" name="btn" value="0" class="btn btn-info">
-                    <input type="button" name="btn" value="00" class="btn btn-info">
-                    <input type="button" name="btn" value="." class="btn btn-info">
-                    <input type="button" name="btn" value="/" class="btn btn-warning">
+                    <input type="button" name="btn" value="0" class="btn btn-info" onclick="calculate(this.value)" >
+                    <input type="button" name="btn" value="00" class="btn btn-info" onclick="calculate(this.value)">
+                    <input type="button" name="btn" value="." class="btn btn-info" onclick="calculate(this.value)">
+                    <input type="button" name="btn" value="/" class="btn btn-warning" onclick="calculate(this.value)">
                 </div>
                 <div class="line" class="last-line">
-                    <input id="finish" type="button" name="btn" value="C" class="btn btn-warning">
-                    <input id="finish" type="button" name="btn" value="=" class="btn btn-warning">
+                    <input id="finish" type="button" name="btn" value="C" class="btn btn-warning" onclick="display.value = null">
+                    <input id="finish" type="button" name="btn" value="=" class="btn btn-warning" onclick="display.value = eval(display.value)">
                 </div>
              </div>
         </form>
     </div>
+
+    <script>
+        function calculate(x){
+            form.display.value = form.display.value + x;
+        }
+    </script>
 </body>
 </html>
